@@ -1,0 +1,34 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Welcome to our apps</h2>
+
+
+    <br>
+
+    <form method="post" enctype="multipart/form-data" action="predictImage">
+
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Upload Your Image File Here:</label> </div> <input name="filePath" type="file"><br><br>
+ <br>
+
+
+<div> <input type="submit" value="gray" name="gray" ><input type="submit" value="blur" name="blur" ><input type="submit" value="Median Filter" name="median" ><input type="submit" value="Thresolding" name="thresholding" >
+
+
+<input type="submit" value="Gradient" name="grad" >
+<input type="submit" value="Histogram Equalize" name="eq" >
+
+</div>
+
+
+ <h2>This {{a}} Image are show</h2>
+ <img src='media/file.png' alt='imagename'height="250" width="350">
+
+
+</form>
+<br>
+
+
+{% endblock %}
